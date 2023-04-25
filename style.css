@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-size: larger;
+}
+
+section {
+    background: linear-gradient(rgb(55, 55, 55), rgb(144, 144, 144));
+    padding: 2%;
+    text-align: center;
+}
+
+#welcome {
+    background-image: url(front_view.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: wheat;
+    background-attachment: fixed;
+}
+/* @media (max-width: 1300px) {
+    #welcome {
+        background-position-y: 100%;
+    }
+}
+@media (max-width: 1000px) {
+    #welcome {
+        background-size: contain;
+    }
+} */
+#welcome h1 {
+    text-align: center;
+    padding-bottom: 15vh;
+    padding-top: 10vh;
+    font-size: xx-large;
+}
+
+
+#pizzasorter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    padding: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.pizzasort {
+    border-radius: 1rem;
+    background-color: wheat;
+    padding: 10px;
+    margin: 10px;
+    width: 12rem;
+    height: fit-content;
+}
+@media (max-width: 1200px) {
+    #pizzasorter {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 600px) {
+    #pizzasorter {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+@media (max-width: 500px) {
+    #pizzasorter {
+        grid-template-columns: 1fr;
+    }
+    .pizzasort {
+        width: 15rem;
+    }
+}
+
+.pizzasort h4 {
+    line-height: 0;
+}
