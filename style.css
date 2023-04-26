@@ -1,15 +1,25 @@
 body {
     margin: 0;
     font-size: larger;
+    display: grid;
+    grid-template-areas:
+    'welcome'
+    'tider'
+    'pizza'
+    'dricka'
+    'glass'
+    'event';
 }
 
+
 section {
-    background: linear-gradient(rgb(55, 55, 55), rgb(144, 144, 144));
+    /* background: linear-gradient(rgb(55, 55, 55), rgb(144, 144, 144)); */
     padding: 2%;
     text-align: center;
 }
 
 #welcome {
+    grid-area: welcome;
     background-image: url(front_view.webp);
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,8 +44,13 @@ section {
     font-size: xx-large;
 }
 
+#tider {
+    grid-area: tider;
+}
+
 
 #pizzasorter {
+    grid-area: pizza;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
@@ -73,4 +88,21 @@ section {
 
 .pizzasort h4 {
     line-height: 0;
+}
+
+#pizzavideo {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+
+#dricka {
+    grid-area: dricka;
+}
+#glass {
+    grid-area: glass;
+}
+#event {
+    grid-area: event;
 }
