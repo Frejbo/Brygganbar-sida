@@ -1,6 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     font-size: larger;
+}
+#content {
     display: grid;
     grid-template-areas:
     'welcome'
@@ -9,6 +14,38 @@ body {
     'dricka'
     'glass'
     'event';
+}
+@media (min-width: 1000px) {
+    #content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        'welcome tider'
+        'glass event'
+        'pizza dricka';
+    }
+}
+
+#topbar {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    /* position: absolute; */
+    background-color: #4A3535;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#topbar a {
+    background-color: rgba(107, 97, 78, 0.8);
+    /* margin: 5px; */
+    padding: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: wheat;
+    border-radius: 10px;
+    border: 1px solid wheat;
+    text-decoration: none;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.363);
 }
 
 
@@ -39,32 +76,37 @@ section {
 } */
 #welcome h1 {
     text-align: center;
-    padding-bottom: 15vh;
-    padding-top: 10vh;
+    padding-bottom: 7rem;
+    padding-top: 7rem;
     font-size: xx-large;
 }
 
 #tider {
     grid-area: tider;
+    background-color: pink;
 }
 
-
+#pizza {
+    background-color: rgb(132, 33, 33);
+    color: wheat;
+}
 #pizzasorter {
+    color: black;
     grid-area: pizza;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
-    padding: 10px;
-    padding-left: 10%;
-    padding-right: 10%;
+    /* padding: 1rem; */
+    padding-bottom: 1rem;
+    /* padding-left: 10%; */
+    /* padding-right: 10%; */
 }
 .pizzasort {
     border-radius: 1rem;
     background-color: wheat;
-    padding: 10px;
-    margin: 10px;
+    padding: .5rem;
+    margin: .7rem;
     width: 12rem;
-    height: fit-content;
 }
 @media (max-width: 1200px) {
     #pizzasorter {
@@ -90,19 +132,35 @@ section {
     line-height: 0;
 }
 
-#pizzavideo {
-    position: relative;
-    top: 0;
-    left: 0;
-}
 
+.image-container {
+    height: 40vh;
+
+    /* center the image (crop instead of stretch) */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.image-container canvas {
+    border-radius: 1rem;
+    width: 100%;
+}
 
 #dricka {
     grid-area: dricka;
+    background-color: rgb(133, 170, 235);
 }
 #glass {
     grid-area: glass;
+    background-color: cornsilk;
 }
 #event {
     grid-area: event;
+    background-color: rgb(92, 33, 122);
+    color: wheat;
+}
+#kontakt {
+    background-color: #4A3535;
+    color: wheat;
 }

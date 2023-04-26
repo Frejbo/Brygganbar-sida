@@ -1,7 +1,7 @@
 const html = document.documentElement;
 
-const glasscanvas = document.querySelector("#kulglasskopning");
-const pizzacanvas = document.querySelector("#pizzavideo");
+const glassCanvas = document.querySelector("#kulglasskopning");
+const pizzaCanvas = document.querySelector("#pizzavideo");
 
 const glass_frameCount = 92;
 const pizza_frameCount = 94;
@@ -11,17 +11,26 @@ const pizza_img = new Image();
 
 glass_img.src = "Glasskopning/img0001.jpg";
 glass_img.onload = function() {
-    glasscanvas.getContext("2d").drawImage(glass_img, 0, 0);
+    glassCanvas.getContext("2d").drawImage(glass_img, 0, 0);
 }
 pizza_img.src = "pizzavideo/img0001.jpg";
 pizza_img.onload = function() {
-    pizzacanvas.getContext("2d").drawImage(pizza_img, 0, 0);
+    pizzaCanvas.getContext("2d").drawImage(pizza_img, 0, 0);
 }
 
-glasscanvas.width = 640; glasscanvas.height = 360;
-pizzacanvas.width = 640; pizzacanvas.height = 360;
+const original_width = 640;
+const original_height = 360;
 
-const element_names = [[glasscanvas, "Glasskopning/img", glass_frameCount, glass_img, "#kulglasskopning"], [pizzacanvas, "pizzavideo/img", pizza_frameCount, pizza_img, "#pizzavideo"]]
+// pizzaCanvas.width = window.screen.width;
+// pizzaCanvas.height = original_height * (window.screen.width / original_width);
+// glassCanvas.width = window.screen.width;
+// glassCanvas.height = original_height * (window.screen.width / original_width);
+pizzaCanvas.width = original_width;
+pizzaCanvas.height = original_height;
+glassCanvas.width = original_width;
+glassCanvas.height = original_height;
+
+const element_names = [[pizzaCanvas, "pizzavideo/img", pizza_frameCount, pizza_img, "#pizzavideo"], [glassCanvas, "Glasskopning/img", glass_frameCount, glass_img, "#kulglasskopning"]]
 
 
 
@@ -39,11 +48,11 @@ function updateImage(index, img, canvas, path) {
 }
 
 function update_canvas(canvas, path, frameCount, img, elementname) {
-
-    var scrollTop = -document.querySelector(elementname).getBoundingClientRect().bottom + (window.innerHeight)//+250)
-    var maxScroll = (window.innerHeight - document.querySelector(elementname).clientHeight) * .8 // the length of which it should scroll within.
+    // parentElement är en image-container som justerar lite cropping i vissa aspect ratios. Gör beräkningarna utifrån den istället för canvas, då hela canvas height kanske inte syns.
+    var scrollTop = -document.querySelector(elementname).parentElement.getBoundingClientRect().bottom + (window.innerHeight)//+250)
+    var maxScroll = (window.innerHeight - document.querySelector(elementname).parentElement.clientHeight) * .8 // the length of which it should scroll within.
     var scrollFraction = (scrollTop / maxScroll)
-    console.log("top", scrollTop, "max", maxScroll, "frac", scrollFraction)
+    // console.log("top", scrollTop, "max", maxScroll, "frac", scrollFraction)
     var frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount))
     if (frameIndex >= 0) {
         requestAnimationFrame( () => updateImage(frameIndex + 1, img, canvas, path))

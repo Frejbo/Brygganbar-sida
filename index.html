@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,86 +9,102 @@
     <link rel="icon" href="logga.jpg">
 </head>
 <body>
-    <section id="welcome">
-        <h1>Välkommen till<br>Brygganbar</h1>
-    </section>
-    <section id="tider">
-        <h2>ÖPPETIDER</h2>
-        <p>tid</p>
-        <p>tid</p>
-    </section>
-    <section id="pizza">
-        <h2>PIZZA</h2>
 
-        <div id="pizzasorter">
+    <div id="topbar">
+        <a href="#pizza">PIZZA</a>
+        <a href="#glass">GLASS</a>
+        <a href="#event">EVENT</a>
+    </div>
 
-            <div class="pizzasort">
-                <h4>Bryggan</h4>
-                <p>Chèvre, valnötter, honung</p>
+    <div id="content">
+
+        <section id="welcome">
+            <h1>Välkommen till<br>Brygganbar</h1>
+        </section>
+        <section id="tider">
+            <h2>ÖPPETIDER</h2>
+            <p>tid</p>
+            <p>tid</p>
+        </section>
+        <section id="pizza">
+            <h2>PIZZA</h2>
+
+            <div id="pizzasorter">
+
+                <div class="pizzasort">
+                    <h4>Bryggan</h4>
+                    <p>Chèvre, valnötter, honung</p>
+                </div>
+                <div class="pizzasort">
+                    <h4>Gräddö</h4>
+                    <p>Buffelmozzarella</p>
+                </div>
+                <div class="pizzasort">
+                    <h4>Räfsnäs</h4>
+                    <p>Salami, parmesan, ruccola</p>
+                </div>
+                <div class="pizzasort">
+                    <h4>Södersvik</h4>
+                    <p>Prosciutto, parmesan, ruccola</p>
+                </div>
+
             </div>
-            <div class="pizzasort">
-                <h4>Gräddö</h4>
-                <p>Buffelmozzarella</p>
+
+            <div class="image-container">
+                <canvas id="pizzavideo"></canvas>
             </div>
-            <div class="pizzasort">
-                <h4>Räfsnäs</h4>
-                <p>Salami, parmesan, ruccola</p>
+        </section>
+        <section id="dricka">
+            <h2>DRICKA</h2>
+
+            <div>
+                <h3>Alkohol</h3>
+                <ul>
+                    <li>Sprit</li>
+                    <li>Sprit</li>
+                    <li>Sprit</li>
+                    <li>Sprit</li>
+                </ul>
             </div>
-            <div class="pizzasort">
-                <h4>Södersvik</h4>
-                <p>Prosciutto, parmesan, ruccola</p>
+            <div>
+                <h3>Alkoholfritt</h3>
+                <ul>
+                    <li>Alkoholfri sprit</li>
+                    <li>Alkoholfri sprit</li>
+                    <li>Alkoholfri sprit</li>
+                    <li>Alkoholfri sprit</li>
+                </ul>
             </div>
 
-        </div>
-
-        <canvas id="pizzavideo"></canvas>
-    </section>
-    <section id="dricka">
-        <h2>DRICKA</h2>
-
-        <div>
-            <h3>Alkohol</h3>
+        </section>
+        <section id="glass">
+            <h2>GLASS</h2>
             <ul>
-                <li>Sprit</li>
-                <li>Sprit</li>
-                <li>Sprit</li>
-                <li>Sprit</li>
+                <li>Smak</li>
+                <li>Smak</li>
+                <li>Smak</li>
+                <li>Smak</li>
+                <li>Smak</li>
             </ul>
-        </div>
-        <div>
-            <h3>Alkoholfritt</h3>
-            <ul>
-                <li>Alkoholfri sprit</li>
-                <li>Alkoholfri sprit</li>
-                <li>Alkoholfri sprit</li>
-                <li>Alkoholfri sprit</li>
-            </ul>
-        </div>
+            <div class="image-container">
+                <canvas id="kulglasskopning"></canvas>
+            </div>
+            <script src="scrollVideos.js"></script>
+        </section>
+        <section id="event">
+            <h2>EVENT</h2>
+            <h4>Fredag:</h4>
+            <p>Silent disco.</p>
+            <h4>Lördag:</h4>
+            <p>Offerritual - ta med ditt minst älskade barn!</p>
+        </section>
+    
+    </div>
 
-    </section>
-    <section id="glass">
-        <h2>GLASS</h2>
-        <ul>
-            <li>Smak</li>
-            <li>Smak</li>
-            <li>Smak</li>
-            <li>Smak</li>
-            <li>Smak</li>
-        </ul>
-        <canvas id="kulglasskopning"></canvas>
-        <script src="scrollVideos.js"></script>
-    </section>
-    <section id="event">
-        <h2>EVENT</h2>
-        <h4>Fredag:</h4>
-        <p>Silent disco.</p>
-        <h4>Lördag:</h4>
-        <p>Offerritual - ta med ditt minst älskade barn!</p>
-    </section>
-    <section id="kontakt">
+    <div id="kontakt">
         <p>Adress:<br>Räfsnäs brygga, 76015 Gräddö</p>
         <p>Mail:<br>exempel@domän.se</p>
         <p>Telefon (ej bokningar):<br>xxx-xxx-xx-xx</p>
-    </section>
+    </div>
 </body>
 </html>
