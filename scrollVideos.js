@@ -3,7 +3,7 @@ const html = document.documentElement;
 const glassCanvas = document.querySelector("#kulglasskopning");
 const pizzaCanvas = document.querySelector("#pizzavideo");
 
-const glass_frameCount = 92;
+const glass_frameCount = 93;
 const pizza_frameCount = 94;
 
 const glass_img = new Image();
@@ -18,17 +18,18 @@ pizza_img.onload = function() {
     pizzaCanvas.getContext("2d").drawImage(pizza_img, 0, 0);
 }
 
-const original_width = 640;
-const original_height = 360;
+// const original_width = 640;
+// const original_height = 360;
 
 // pizzaCanvas.width = window.screen.width;
 // pizzaCanvas.height = original_height * (window.screen.width / original_width);
 // glassCanvas.width = window.screen.width;
 // glassCanvas.height = original_height * (window.screen.width / original_width);
-pizzaCanvas.width = original_width;
-pizzaCanvas.height = original_height;
-glassCanvas.width = original_width;
-glassCanvas.height = original_height;
+
+pizzaCanvas.width = pizza_img.width;
+pizzaCanvas.height = pizza_img.height;
+glassCanvas.width = glass_img.width;
+glassCanvas.height = glass_img.height;
 
 const element_names = [[pizzaCanvas, "pizzavideo/img", pizza_frameCount, pizza_img, "#pizzavideo"], [glassCanvas, "Glasskopning/img", glass_frameCount, glass_img, "#kulglasskopning"]]
 
@@ -38,7 +39,6 @@ const element_names = [[pizzaCanvas, "pizzavideo/img", pizza_frameCount, pizza_i
 window.addEventListener("scroll", () => {
     for (let i = 0; i < element_names.length; i++) {
         update_canvas(element_names[i][0], element_names[i][1], element_names[i][2], element_names[i][3], element_names[i][4])
-        continue
     }
 })
 
@@ -58,8 +58,6 @@ function update_canvas(canvas, path, frameCount, img, elementname) {
         requestAnimationFrame( () => updateImage(frameIndex + 1, img, canvas, path))
     }
 }
-
-
 
 
 // Preload
