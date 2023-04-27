@@ -99,12 +99,10 @@ section {
 
 
 #pizza {
-    /* background-color: rgb(132, 33, 33); */
+    background-color: rgb(132, 33, 33);
     color: wheat;
     padding: 0;
-    position: relative;
-    text-align: center;
-    height: 100%;
+    /* height: 100%; */
 }
 /* #pizza h2 {
     position: absolute;
@@ -138,12 +136,12 @@ section {
         grid-template-columns: 1fr 1fr;
     }
 }
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     #pizzasorter {
         padding-left: 2%;
         padding-right: 2%;
     }
-}
+} */
 @media (max-width: 500px) {
     #pizzasorter {
         grid-template-columns: 1fr;
@@ -153,12 +151,12 @@ section {
     }
 }
 
-/* .image-container {
-    position: absolute;
+.image-container {
     height: 40vh;
-     */
+    margin: 2%;
+    
     /* center the image (crop instead of stretch) */
-    /* display: flex;
+    display: flex;
     align-items: center;
     overflow: hidden;
     border-radius: 1rem;
@@ -166,26 +164,9 @@ section {
 .image-container canvas {
     border-radius: 1rem;
     width: 100%;
-} */
-
-.image-container canvas {
-    width: 100%;
-    height: 100%;
 }
 
 
-/* .image-container {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: relative;
-} */
-/* #pizzavideo {
-    z-index: 10;
-    position: absolute;
-    left: 0;
-} */
 
 #dricka {
     grid-area: dricka;
