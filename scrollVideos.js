@@ -45,12 +45,13 @@ window.addEventListener("scroll", () => {
 function updateImage(index, img, canvas, path) {
     img.src = path + index.toString().padStart(4, "0") + ".jpg";
     canvas.getContext("2d").drawImage(img, 0, 0)
+    // document.querySelector("#pizza").style.backgroundImage = "url("+img.src+")";//"url("+canvas.toDataURL()+")";
 }
 
 function update_canvas(canvas, path, frameCount, img, elementname) {
     // parentElement är en image-container som justerar lite cropping i vissa aspect ratios. Gör beräkningarna utifrån den istället för canvas, då hela canvas height kanske inte syns.
     var scrollTop = -document.querySelector(elementname).parentElement.getBoundingClientRect().bottom + (window.innerHeight)//+250)
-    var maxScroll = (window.innerHeight - document.querySelector(elementname).parentElement.clientHeight) * .8 // the length of which it should scroll within.
+    var maxScroll = (window.innerHeight - document.querySelector(elementname).parentElement.clientHeight)// * .8 // the length of which it should scroll within.
     var scrollFraction = (scrollTop / maxScroll)
     // console.log("top", scrollTop, "max", maxScroll, "frac", scrollFraction)
     var frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount))

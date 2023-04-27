@@ -96,11 +96,23 @@ section {
     background-color: pink;
 }
 
+
+
 #pizza {
-    background-color: rgb(132, 33, 33);
+    /* background-color: rgb(132, 33, 33); */
     color: wheat;
+    padding: 0;
 }
+/* #pizza h2 {
+    position: absolute;
+    width: 100%;
+} */
+
 #pizzasorter {
+    /* position: absolute; */
+    z-index: 2;
+    width: 100%;
+    
     color: black;
     grid-area: pizza;
     display: grid;
@@ -113,7 +125,9 @@ section {
 }
 .pizzasort {
     border-radius: 1rem;
-    background-color: wheat;
+    background-color: rgba(245, 222, 179, 0.8);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     padding: .5rem;
     margin: .7rem;
     width: 12rem;
@@ -138,20 +152,12 @@ section {
     }
 }
 
-.pizzasort h4 {
-    line-height: 0;
-}
-
 /* .image-container {
-    position:relative;
-    z-index: 0;
-    top: 0;
-} */
-.image-container {
-    
+    position: absolute;
     height: 40vh;
+     */
     /* center the image (crop instead of stretch) */
-    display: flex;
+    /* display: flex;
     align-items: center;
     overflow: hidden;
     border-radius: 1rem;
@@ -159,15 +165,42 @@ section {
 .image-container canvas {
     border-radius: 1rem;
     width: 100%;
+} */
+
+.image-container canvas {
+    width: 100%;
+    height: 100%;
 }
+
+
+/* .image-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+} */
+/* #pizzavideo {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+} */
 
 #dricka {
     grid-area: dricka;
     background-color: rgb(133, 170, 235);
 }
+#dricka div {
+    text-align: left;
+}
 #glass {
     grid-area: glass;
     background-color: cornsilk;
+    display: flex;
+}
+#glass ul {
+    width: fit-content;
+    text-align: left;
 }
 #event {
     grid-area: event;
