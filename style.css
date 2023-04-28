@@ -20,8 +20,8 @@ body {
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
         'welcome glass'
-        'tider event'
         'pizza dricka'
+        'tider event'
     }
     #glass {
         flex-direction: column;
