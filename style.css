@@ -19,9 +19,12 @@ body {
     #content {
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
-        'welcome tider'
-        'glass event'
-        'pizza dricka';
+        'welcome glass'
+        'tider event'
+        'pizza dricka'
+    }
+    #glass {
+        flex-direction: column;
     }
 }
 
@@ -73,6 +76,10 @@ section {
     background-position: center;
     color: wheat;
     background-attachment: fixed;
+    min-height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* @media (max-width: 1300px) {
     #welcome {
@@ -85,9 +92,8 @@ section {
     }
 } */
 #welcome h1 {
-    text-align: center;
-    padding-bottom: 7rem;
-    padding-top: 7rem;
+    /* padding-bottom: 7rem;
+    padding-top: 7rem; */
     font-size: xx-large;
 }
 
@@ -152,8 +158,8 @@ section {
 }
 
 .image-container {
-    height: 40vh;
-    margin: 2%;
+    /* height: 40vh; */
+    margin: 1rem;
     
     /* center the image (crop instead of stretch) */
     display: flex;
@@ -179,6 +185,11 @@ section {
     grid-area: glass;
     background-color: cornsilk;
     display: flex;
+}
+@media (max-width: 600px) {
+    #glass {
+        flex-direction: column;
+    }
 }
 #glass ul {
     width: fit-content;
