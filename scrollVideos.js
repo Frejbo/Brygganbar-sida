@@ -30,8 +30,6 @@ pizza_img.onload = function() {
 const element_names = [[pizzaCanvas, "pizzavideo/img", pizza_frameCount, pizza_img, "#pizzavideo"], [glassCanvas, "Glasskopning/img", glass_frameCount, glass_img, "#kulglasskopning"]]
 
 
-
-
 window.addEventListener("scroll", () => {
     for (let i = 0; i < element_names.length; i++) {
         update_canvas(element_names[i][0], element_names[i][1], element_names[i][2], element_names[i][3], element_names[i][4])
