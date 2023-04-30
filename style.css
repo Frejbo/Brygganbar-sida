@@ -9,10 +9,10 @@ body {
     display: grid;
     grid-template-areas:
     'welcome'
-    'tider'
     'pizza'
     'dricka'
     'glass'
+    'tider'
     'event';
 }
 @media (min-width: 1000px) {
@@ -58,7 +58,7 @@ body {
 #WIP {
     background-color: orange;
     border: 10px dotted black;
-    padding: 5%;
+    padding: 1rem;
     text-align: center;
 }
 
